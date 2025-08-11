@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 
@@ -13,7 +13,7 @@ export default function HomeScreen() {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/(tabs)/about')}
+        onPress={() => router.push('/about')}
       >
         <Text style={styles.buttonText}>Ir a About</Text>
       </TouchableOpacity>

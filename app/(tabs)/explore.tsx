@@ -1,11 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
-
+import { useRouter } from 'expo-router';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function ExploreScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pantalla Explorar 🔍</Text>
-      <Text style={styles.subtitle}>Aquí mostraré contenido en el futuro</Text>
+
+      <Button
+        title="Ir a About"
+        onPress={() => router.push({pathname: '/about', params: { mensaje: 'Hola desde Explore 🔍' }})}
+      />
     </View>
   );
 }
@@ -13,18 +19,13 @@ export default function ExploreScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
   },
   title: {
-    fontSize: 24,
-    color: '#0ff',
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#fff',
-    marginTop: 10,
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
   },
 });

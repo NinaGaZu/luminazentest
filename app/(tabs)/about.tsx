@@ -1,14 +1,15 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 export default function AboutScreen(){
   const router = useRouter();
+  const { mensaje } = useLocalSearchParams<{ mensaje?: string }>();
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sobre LuminazenTest 🌟</Text>
-      <Text style={styles.subtitle}>Esta es la segunda pantalla en React Native</Text>
+      {mensaje && <Text style={styles.subtitle}>{mensaje}</Text>}
     
     <TouchableOpacity
       style={styles.button}
