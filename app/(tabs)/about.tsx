@@ -2,21 +2,21 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 
 
-
-export default function HomeScreen() {
+export default function AboutScreen(){
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hola Gianina 🚀</Text>
-      <Text style={styles.subtitle}>Bienvenida a tu primera app con Expo Router</Text>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/(tabs)/about')}
-      >
-        <Text style={styles.buttonText}>Ir a About</Text>
-      </TouchableOpacity>
+      <Text style={styles.title}>Sobre LuminazenTest 🌟</Text>
+      <Text style={styles.subtitle}>Esta es la segunda pantalla en React Native</Text>
+    
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => router.back()}
+    >
+      <Text style={styles.buttonText}>⬅ Volver</Text>
+    </TouchableOpacity>
+    
     </View>
   );
 }
@@ -24,18 +24,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#282c34',
+    backgroundColor: '#222',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
-    fontSize: 26,
-    color: '#61dafb',
+    fontSize: 24,
+    color: '#f5c518',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 16,
     color: '#fff',
   },
   button: {
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: 'bold',
   },
-});
+})
